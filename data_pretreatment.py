@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def data_pretreatment(file_name):
-    df = pd.read_csv(filepath_or_buffer=file_name, nrows=5000)
+    df = pd.read_csv(filepath_or_buffer=file_name, nrows=1000)
     df['ds'] = pd.to_datetime(df['ds'])
     cnt = len(df)
     while cnt % 6 != 0:
