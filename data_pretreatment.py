@@ -3,7 +3,7 @@ import pandas as pd
 
 def data_pretreatment(file_name):
     df = pd.read_csv(filepath_or_buffer=file_name, nrows=1000)
-    df['ds'] = pd.to_datetime(df['ds'])
+    df['ds'] = pd.to_datetime(df['ds'], format='%d.%m.%Y %H:%M:%S')
     cnt = len(df)
     while cnt % 6 != 0:
         cnt = cnt - 1
