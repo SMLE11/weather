@@ -15,7 +15,7 @@ len_data = len(data_train_cut)  # 原始集长度
 for i in range(0, int(len_data / 5)):
     m = Prophet()  # 创建模型
     t = data_train[head:tail + 1]  # t为长度为30的滑动窗口
-    m.fit(t)  # 将t作为训练集进行拟合
+    m.fit(t)  # 将t作为训练集                                                                                                                                                                                                                                                             ···                                                                                                                                                                                                                                                                                                                                                                                         进行拟合
     future = m.make_future_dataframe(5)  # 要在长度为30的训练集基础上，预测一个长度为5的数据
     forecast = m.predict(future)  # 进行预测，得到长度为30+5的数据
     forecast = forecast.loc[:, ['ds', 'yhat']]  # 仅取出时间列和数值列
@@ -44,10 +44,11 @@ fig = plt.figure()
 plt.plot(res[:, 0], res[:, len_res_column - 1], color='green')
 plt.plot(data_train_cut["ds"], data_train_cut["y"], color='blue')
 
-val_theoretical = data_train_cut.loc[30:30 + len_res_row - 2, 'y']
-val_actual = res[0:len_res_row - 1, len_res_column - 1]
+val_theoretical = data_train_cut['y']
+val_theoretical = val_theoretical[0:len(res)]
+val_actual = res[0:len(val_theoretical) , 1]
 
-# error = abs(val_theoretical - val_actual)
-# error_percentage = error / val_theoretical
-# ans = sum(error_percentage) / len(error_percentage) * 100
-# print(ans)
+error = abs(val_theoretical - val_actual)
+error_percentage = error / val_theoretical
+ans = sum(error_percentage) / len(error_percentage) * 100
+print(ans)
