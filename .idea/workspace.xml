@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="850eaca3-14a9-421d-9b5b-b9fd6951a835" name="Changes" comment="修复了预处理中的读取datetime错误">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="850eaca3-14a9-421d-9b5b-b9fd6951a835" name="Changes" comment="修复了数据的重复项、缺失项。完善了程序。">
       <change beforePath="$PROJECT_DIR$/Prophet.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prophet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_pretreatment.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_pretreatment.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
