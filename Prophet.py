@@ -18,19 +18,7 @@ for i in range(0, int(len_data / 5)):
     m.fit(t)  # 将t作为训练集                                                                                                                                                                                                                                                             ···                                                                                                                                                                                                                                                                                                                                                                                         进行拟合
     future = m.make_future_dataframe(5)  # 要在长度为30的训练集基础上，预测一个长度为5的数据
     forecast = m.predict(future)  # 进行预测，得到长度为30+5的数据
-    forecast = forecast.loc[:, ['ds', 'yhat']]  # 仅取出时间列和数值列
-    head += 5  # 滑动窗口进行滑动
-    tail += 5
-    if i == 0:  # 首个循环的预测结果作为初始预测集
-        res = forecast[30:35]  # 取出forecast最后长度为5的数据作为预测结果
-    else:
-        res = np.vstack((res, forecast[30:35]))  # 非首个循环的预测结果水平拼接上之前的res预测集
-
-# data_train_cut["ds"] = pd.to_datetime(data_train_cut["ds"])
-len_res_column = res.shape[1]
-len_res_row = res.shape[0]
-
-fig = plt.figure()  # 开始第一个图，其中有两个子图
+\两个子图
 # 第一个子图画出预测集
 ax1 = fig.add_subplot(211)  # 添加子图，第一个数字‘3’表示有三个行，第一个‘1’表示每一行只画一个图，第二个‘1’表示这是第一个图
 ax1.plot(res[:, 0], res[:, len_res_column - 1], color='green', linewidth=0.5)  # 设置绘制的数据，绘制后的颜色和线宽
