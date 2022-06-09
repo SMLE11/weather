@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from fbprophet import Prophet
 from data_pretreatment import data_pretreatment
-###
 df = data_pretreatment("t.csv")  # 数据预处理
 data_train = df  # 用df作为训练集并命名为data_train
 length = len(data_train)  # 读出训练集的长度
